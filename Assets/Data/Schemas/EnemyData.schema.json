@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://lff.game/schema/EnemyData.schema.json",
+    "title": "EnemyData",
+    "description": "敵キャラクターデータ定義",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "敵ID。例: ENEMY_SLIME"
+        },
+        "name": {
+            "type": "string",
+            "description": "敵の表示名。例: スライム"
+        },
+        "hp": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "最大HP"
+        },
+        "attack": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "攻撃力"
+        },
+        "shape": {
+            "type": "array",
+            "description": "敵形状を構成する相対座標の配列 [[x,y],...]",
+            "items": {
+                "type": "array",
+                "prefixItems": [
+                    { "type": "integer" },
+                    { "type": "integer" }
+                ],
+                "minItems": 2,
+                "maxItems": 2
+            },
+            "minItems": 1
+        }
+    },
+    "required": [ "id", "name", "hp", "attack", "shape" ],
+    "additionalProperties": false
+}
