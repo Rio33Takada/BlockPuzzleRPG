@@ -1,3 +1,4 @@
+using UnityEngine;
 using System.Collections.Generic;
 
 public class BattleEnemy
@@ -27,7 +28,7 @@ public class BattleEnemy
             int y = startY + dy;
 
             if (!grid.IsInside(x, y)) return false; // はみ出しチェック
-            if (grid.GetGrid(x, y).FieldObject != null) return false; // 重複チェック
+            if (!grid.GetGrid(x, y).FieldObject.IsEmpty) return false; // 重複チェック
         }
 
         foreach (var (dx, dy) in shapeData.RelativeCells)

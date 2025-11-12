@@ -1,9 +1,17 @@
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
+public enum FieldObjectType
+{
+    Empty,
+    Enemy,
+}
 
 public class FieldObjectData
 {
     [JsonProperty("type")]
-    public string Type { get; set; }
+    [JsonConverter(typeof(StringEnumConverter))]
+    public FieldObjectType Type { get; set; }
 
     [JsonProperty("x")]
     public int X { get; set; }

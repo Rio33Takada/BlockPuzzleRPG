@@ -1,5 +1,8 @@
 using System.Collections.Generic;
 
+/// <summary>
+/// バトル開始時の処理を担当するクラス.
+/// </summary>
 public class BattleInitializer
 {
     private readonly string enemyPath;

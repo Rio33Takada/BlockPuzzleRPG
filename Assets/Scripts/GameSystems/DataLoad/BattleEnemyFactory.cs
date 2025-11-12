@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 public class BattleEnemyFactory
 {
@@ -34,9 +33,9 @@ public class BattleEnemyFactory
 
         Enemy enemy = new Enemy
         {
-            Id = data.Id,
-            HP = data.HP,
-            Attack = data.Attack
+            //Id = data.Id,
+            //HP = data.HP,
+            //Attack = data.Attack
         };
 
         EnemyShapeData shape = new EnemyShapeData

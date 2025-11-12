@@ -6,13 +6,8 @@ class FieldGenerator
 
         foreach (var obj in stageData.FieldObjects)
         {
-            var fieldObject = FieldObjectFactory.Create(obj.Type);
-            grid.SetGrid(obj.X, obj.Y, new FieldGridInformation
-            {
-                FieldObject = fieldObject,
-                IndexX = obj.X,
-                IndexY = obj.Y
-            });
+            var fieldObject = FieldObjectFactory.Create(obj.Type, obj.X, obj.Y);
+            grid.SetGrid(obj.X, obj.Y, new FieldGridInformation(obj.X, obj.Y, fieldObject));
         }
 
         return grid;

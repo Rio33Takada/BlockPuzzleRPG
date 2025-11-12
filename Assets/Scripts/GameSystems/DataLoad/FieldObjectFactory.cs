@@ -1,18 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FieldObjectFactory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static FieldObject Create(FieldObjectType type, int x, int y)
     {
-        
-    }
+        switch (type)
+        {
+            case FieldObjectType.Empty:
+                return new EmptyFieldObject(x, y);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            default:
+                Debug.LogWarning($"Unknown field object type: {type}");
+                return null;
+        }
     }
 }

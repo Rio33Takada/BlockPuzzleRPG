@@ -1,7 +1,9 @@
 using System;
 using System.IO;
 using Newtonsoft.Json;
-
+/// <summary>
+/// JSONファイルを読み込むためのクラス.
+/// </summary>
 public static class JsonUtilityExtensions
 {
     public static T LoadJson<T>(string path)

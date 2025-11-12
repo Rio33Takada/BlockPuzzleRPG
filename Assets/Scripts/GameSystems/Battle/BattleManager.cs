@@ -4,7 +4,7 @@ class BattleManager
 {
     private readonly BattleTurnController turnController;
     private readonly GridManager<FieldGridInformation> fieldGrid;
-    private readonly PuzzleGridManager puzzleGrid;
+    private readonly GridManager<PuzzleGridInformation> puzzleGrid;
     private readonly List<BattleCharacter> playerTeam;
     private readonly List<BattleEnemy> enemies;
 
