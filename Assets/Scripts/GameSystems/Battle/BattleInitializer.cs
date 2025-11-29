@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// バトル開始時の処理を担当するクラス.
@@ -14,13 +15,13 @@ public class BattleInitializer
         this.dungeonPath = dungeonPath;
     }
 
-    public (GridManager<FieldGridInformation>, List<BattleEnemy>) InitializeBattle(string stageId)
+    public (GridManager<FieldGridInformation>, List<BattleEnemy>) InitializeBattle(string stageId, FieldViewFactory viewFactory, Transform fieldParent)
     {
         DungeonDataLoader dungeonLoader = new DungeonDataLoader(dungeonPath);
         DungeonStageData stageData = dungeonLoader.LoadStage(stageId);
 
         EnemyDatabase enemyDB = new EnemyDatabase(enemyPath);
-        FieldGenerator fieldGenerator = new FieldGenerator();
+        FieldGenerator fieldGenerator = new FieldGenerator(viewFactory);
         GridManager<FieldGridInformation> field = fieldGenerator.GenerateField(stageData);
 
         BattleEnemyFactory factory = new BattleEnemyFactory(enemyDB);

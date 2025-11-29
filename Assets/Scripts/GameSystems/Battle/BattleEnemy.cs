@@ -20,15 +20,27 @@ public class BattleEnemy
 
     public bool PlaceOnGrid(GridManager<FieldGridInformation> grid, int startX, int startY)
     {
-        if (shapeData == null) return false;
+        if (shapeData == null)
+        {
+            Debug.LogError($"{EnemyData.Name} none ShapeData");
+            return false;
+        }
 
         foreach (var (dx, dy) in shapeData.RelativeCells)
         {
             int x = startX + dx;
             int y = startY + dy;
 
-            if (!grid.IsInside(x, y)) return false; // はみ出しチェック
-            if (!grid.GetGrid(x, y).FieldObject.IsEmpty) return false; // 重複チェック
+            if (!grid.IsInside(x, y)) 
+            {
+                Debug.LogError($"{EnemyData.Name} Outside");
+                return false; // はみ出しチェック
+            }
+            if (!grid.GetGrid(x, y).FieldObject.IsEmpty)
+            {
+                Debug.LogError($"{EnemyData.Name} No Space To Place");
+                return false; // 重複チェック
+            }
         }
 
         foreach (var (dx, dy) in shapeData.RelativeCells)

@@ -8,5 +8,11 @@
             "y": 5
         }
     ],
-    "fieldObjects": []
+    "fieldObjects": [
+        {
+            "type": "Empty",
+            "x": 3,
+            "y": 3
+        }
+    ]
 }

@@ -1,0 +1,93 @@
+作業環境
+Unity 2020.3.36.f1
+VisualStudio 2022
+
+フォルダ構成:
+Assets
+|   
++---Data
+|   |   
+|   +---Dungeons
+|   |       1-1.json
+|   |       stage_.json
+|   |       
+|   +---Enemies
+|   |       enemy_.json
+|   |       enemy_1.json
+|   |       
+|   \---Schemas
+|           DungeonStageData.schema.json
+|           EnemyData.schema.json
+|           EnemySpawnData.schema.json
+|           FieldObjectData.schema.json
+|           
++---Prefabs
+|       Button.prefab
+|       
++---Scenes
+|       GameScene.unity
+|       
+\---Scripts
+    |   GameManager.cs
+    |   
+    +---Core
+    |   |   
+    |   +---Data
+    |   |       DungeonStageData.cs
+    |   |       EnemyData.cs
+    |   |       EnemyShapeData.cs
+    |   |       EnemySpawnData.cs
+    |   |       FieldObjectData.cs
+    |   |       
+    |   +---Entities
+    |   |       EmptyFieldObject.cs
+    |   |       Enemy.cs
+    |   |       FieldObject.cs
+    |   |       PuzzleObject.cs
+    |   |       
+    |   +---Grid
+    |   |       BaseGridInformation.cs
+    |   |       FieldGridInformation.cs
+    |   |       GridManager.cs
+    |   |       PuzzleGridInformation.cs
+    |   |       
+    |   \---Utility
+    |       |   JsonUtilityExtensions.cs
+    |       |   
+    |       \---Validation
+    +---DebugTools
+    +---Enemy
+    +---GameSystems
+    |   |   
+    |   +---AI
+    |   +---Battle
+    |   |       BattleCharacter.cs
+    |   |       BattleEnemy.cs
+    |   |       BattleEnemyCube.cs
+    |   |       BattleInitializer.cs
+    |   |       BattleManager.cs
+    |   |       BattleTurnController.cs
+    |   |       EnemySpawner.cs
+    |   |       EnemyTurnController.cs
+    |   |       FieldGenerator.cs
+    |   |       PlayerTurnController.cs
+    |   |       
+    |   +---DataLoad
+    |   |       BattleEnemyFactory.cs
+    |   |       DungeonDataLoader.cs
+    |   |       EnemyDatabase.cs
+    |   |       EnemyShapeLoader.cs
+    |   |       FieldObjectFactory.cs
+    |   |       
+    |   +---Flow
+    |   |       DungeonSceneManager.cs
+    |   |       
+    |   \---Skill
+    \---UI
+        |   
+        +---BattaleUI
+        +---Common
+        \---MainMenu
+                DungeonButtonUI.cs
+                DungeonSelectUIManager.cs
+                

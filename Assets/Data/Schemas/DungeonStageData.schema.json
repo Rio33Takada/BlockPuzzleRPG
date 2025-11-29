@@ -60,7 +60,7 @@
             "properties": {
                 "type": {
                     "type": "string",
-                    "description": "オブジェクト種別（例: Rock, Crystal など）"
+                    "description": "オブジェクト種別"
                 },
                 "x": {
                     "type": "integer",

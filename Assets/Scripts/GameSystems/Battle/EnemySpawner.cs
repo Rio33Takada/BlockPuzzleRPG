@@ -23,6 +23,7 @@ class EnemySpawner
 
             if (!placed)
                 Console.WriteLine($"[SpawnError] {spawn.EnemyId} の配置に失敗しました。");
+            else Console.WriteLine($"{spawn.EnemyId} を配置しました。");
 
             enemies.Add(enemy);
         }

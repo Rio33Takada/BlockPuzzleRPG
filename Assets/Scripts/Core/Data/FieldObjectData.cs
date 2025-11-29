@@ -3,6 +3,7 @@ using Newtonsoft.Json.Converters;
 
 public enum FieldObjectType
 {
+    OutSide,
     Empty,
     Enemy,
 }
