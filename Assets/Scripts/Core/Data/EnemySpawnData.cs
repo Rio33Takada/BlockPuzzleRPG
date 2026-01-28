@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 public class EnemySpawnData
 {
     [JsonProperty("enemyId")]
-    public string EnemyId { get; set; }
+    public int EnemyId { get; set; }
 
     [JsonProperty("x")]
     public int X { get; set; }

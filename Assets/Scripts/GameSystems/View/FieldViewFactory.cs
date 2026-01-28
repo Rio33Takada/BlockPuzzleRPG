@@ -31,6 +31,7 @@ public class FieldViewFactory : MonoBehaviour
 
         var view = Instantiate(prefab, position, Quaternion.identity, parent);
         view.name = $"{fieldObject.ObjectType}({fieldObject.X},{fieldObject.Y})";
+
         return view;
     }
 }

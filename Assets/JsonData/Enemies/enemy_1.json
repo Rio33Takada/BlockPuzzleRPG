@@ -1,0 +1,13 @@
+{
+    "$schema": "../Schemas/EnemyData.schema.json",
+
+    "id": 1,
+    "name": "test_enemy",
+    "type": "test",
+    "hp": 1,
+    "attack": 1,
+    "shape": [
+        [ 0, 0 ],
+        [ 0, 1 ]
+    ]
+}

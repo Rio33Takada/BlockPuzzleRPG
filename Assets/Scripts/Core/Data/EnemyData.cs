@@ -1,13 +1,17 @@
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System.Collections.Generic;
 
 public class EnemyData
 {
     [JsonProperty("id")]
-    public string Id { get; set; }
+    public int Id { get; set; }
 
     [JsonProperty("name")]
     public string Name { get; set; }
+
+    [JsonConverter(typeof(StringEnumConverter))]
+    public EnemyType Type { get; set; }
 
     [JsonProperty("hp")]
     public int HP { get; set; }

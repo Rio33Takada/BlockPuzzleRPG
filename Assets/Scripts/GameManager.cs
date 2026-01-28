@@ -18,6 +18,6 @@ public class GameManager : MonoBehaviour
 
     void StartBattle()
     {
-        BattleManager battleManager = new BattleManager();
+        //BattleManager battleManager = new BattleManager();
     }
 }

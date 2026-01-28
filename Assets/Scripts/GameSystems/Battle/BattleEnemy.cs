@@ -5,7 +5,7 @@ public class BattleEnemy
 {
     public Enemy EnemyData { get; }
     public List<BattleEnemyCube> Cubes { get; }
-    private EnemyShapeData shapeData;
+    public EnemyShapeData ShapeData { get; private set; }
 
     public BattleEnemy(Enemy data, List<BattleEnemyCube> cubes)
     {
@@ -15,18 +15,18 @@ public class BattleEnemy
 
     public void SetShapeData(EnemyShapeData data)
     {
-        shapeData = data;
+        ShapeData = data;
     }
 
     public bool PlaceOnGrid(GridManager<FieldGridInformation> grid, int startX, int startY)
     {
-        if (shapeData == null)
+        if (ShapeData == null)
         {
             Debug.LogError($"{EnemyData.Name} none ShapeData");
             return false;
         }
 
-        foreach (var (dx, dy) in shapeData.RelativeCells)
+        foreach (var (dx, dy) in ShapeData.RelativeCells)
         {
             int x = startX + dx;
             int y = startY + dy;
@@ -43,12 +43,12 @@ public class BattleEnemy
             }
         }
 
-        foreach (var (dx, dy) in shapeData.RelativeCells)
+        foreach (var (dx, dy) in ShapeData.RelativeCells)
         {
             int x = startX + dx;
             int y = startY + dy;
             var cube = new BattleEnemyCube(this, x, y);
-            grid.GetGrid(x, y).FieldObject = cube;
+            grid.SetGrid(x, y, new FieldGridInformation(x, y, cube));
             Cubes.Add(cube);
         }
 

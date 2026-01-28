@@ -4,7 +4,7 @@ using System.IO;
 
 public class EnemyDatabase
 {
-    private readonly Dictionary<string, EnemyData> enemies = new Dictionary<string, EnemyData>();
+    private readonly Dictionary<int, EnemyData> enemies = new Dictionary<int, EnemyData>();
 
     public EnemyDatabase(string directoryPath)
     {
@@ -20,7 +20,7 @@ public class EnemyDatabase
         foreach (string file in files)
         {
             EnemyData data = JsonUtilityExtensions.LoadJson<EnemyData>(file);
-            if (data != null && !string.IsNullOrEmpty(data.Id))
+            if (data != null && data.Id > 0)
             {
                 enemies[data.Id] = data;
             }
@@ -32,7 +32,7 @@ public class EnemyDatabase
         }
     }
 
-    public EnemyData Get(string id)
+    public EnemyData Get(int id)
     {
         EnemyData data;
         enemies.TryGetValue(id, out data);

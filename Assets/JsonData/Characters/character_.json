@@ -1,0 +1,8 @@
+{
+    "$schema" : "../Schemas/CharacterData.schema.json",
+
+    "attack": 0,
+    "hp": 1,
+    "id": 0,
+    "name": "0"
+}

@@ -1,0 +1,18 @@
+{
+    "height": 10,
+    "width": 10,
+    "enemySpawns": [
+        {
+            "enemyId": 1,
+            "x": 5,
+            "y": 5
+        }
+    ],
+    "fieldObjects": [
+        {
+            "type": "OutSide",
+            "x": 3,
+            "y": 3
+        }
+    ]
+}

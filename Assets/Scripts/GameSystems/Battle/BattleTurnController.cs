@@ -3,6 +3,11 @@ class BattleTurnController
     private readonly PlayerTurnController playerTurn;
     private readonly EnemyTurnController enemyTurn;
 
+    public BattleTurnController()
+    {
+
+    }
+
     public bool IsPlayerTurn { get; private set; }
 
     public void StartPlayerTurn()

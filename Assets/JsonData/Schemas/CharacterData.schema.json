@@ -1,0 +1,42 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://lff.game/schema/CharacterData.schema.json",
+    "title": "CharacterData",
+    "description": "キャラクターデータ定義",
+    "type": "object",
+    "properties": {
+        "$schema": true,
+
+        "id": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "キャラクターID"
+        },
+        "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "キャラクターの表示名"
+        },
+
+        "type": {
+            "type": "string",
+            "description": "キャラの種類",
+            "enum": [
+                "test"
+            ]
+        },
+
+        "hp": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "最大HP"
+        },
+        "attack": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "攻撃力"
+        }
+    },
+    "required": [ "id", "name", "hp", "attack" ],
+    "additionalProperties": false
+}

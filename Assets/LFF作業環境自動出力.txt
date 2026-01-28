@@ -4,90 +4,199 @@ VisualStudio 2022
 
 フォルダ構成:
 Assets
-|   
-+---Data
-|   |   
-|   +---Dungeons
-|   |       1-1.json
-|   |       stage_.json
-|   |       
-|   +---Enemies
-|   |       enemy_.json
-|   |       enemy_1.json
-|   |       
-|   \---Schemas
-|           DungeonStageData.schema.json
-|           EnemyData.schema.json
-|           EnemySpawnData.schema.json
-|           FieldObjectData.schema.json
-|           
-+---Prefabs
-|       Button.prefab
-|       
-+---Scenes
-|       GameScene.unity
-|       
-\---Scripts
-    |   GameManager.cs
-    |   
-    +---Core
-    |   |   
-    |   +---Data
-    |   |       DungeonStageData.cs
-    |   |       EnemyData.cs
-    |   |       EnemyShapeData.cs
-    |   |       EnemySpawnData.cs
-    |   |       FieldObjectData.cs
-    |   |       
-    |   +---Entities
-    |   |       EmptyFieldObject.cs
-    |   |       Enemy.cs
-    |   |       FieldObject.cs
-    |   |       PuzzleObject.cs
-    |   |       
-    |   +---Grid
-    |   |       BaseGridInformation.cs
-    |   |       FieldGridInformation.cs
-    |   |       GridManager.cs
-    |   |       PuzzleGridInformation.cs
-    |   |       
-    |   \---Utility
-    |       |   JsonUtilityExtensions.cs
-    |       |   
-    |       \---Validation
-    +---DebugTools
-    +---Enemy
-    +---GameSystems
-    |   |   
-    |   +---AI
-    |   +---Battle
-    |   |       BattleCharacter.cs
-    |   |       BattleEnemy.cs
-    |   |       BattleEnemyCube.cs
-    |   |       BattleInitializer.cs
-    |   |       BattleManager.cs
-    |   |       BattleTurnController.cs
-    |   |       EnemySpawner.cs
-    |   |       EnemyTurnController.cs
-    |   |       FieldGenerator.cs
-    |   |       PlayerTurnController.cs
-    |   |       
-    |   +---DataLoad
-    |   |       BattleEnemyFactory.cs
-    |   |       DungeonDataLoader.cs
-    |   |       EnemyDatabase.cs
-    |   |       EnemyShapeLoader.cs
-    |   |       FieldObjectFactory.cs
-    |   |       
-    |   +---Flow
-    |   |       DungeonSceneManager.cs
-    |   |       
-    |   \---Skill
-    \---UI
-        |   
-        +---BattaleUI
-        +---Common
-        \---MainMenu
+│
+├───JsonData
+│   │   Characters.meta
+│   │   Dungeons.meta
+│   │   Enemies.meta
+│   │   Schemas.meta
+│   │   
+│   ├───Characters
+│   │       character_.json
+│   │       character_.json.meta
+│   │       
+│   ├───Dungeons
+│   │       1-1.json
+│   │       1-1.json.meta
+│   │       stage_.json
+│   │       stage_.json.meta
+│   │       
+│   ├───Enemies
+│   │       enemy_.json
+│   │       enemy_.json.meta
+│   │       enemy_1.json
+│   │       enemy_1.json.meta
+│   │       
+│   └───Schemas
+│           CharacterData.schema.json
+│           CharacterData.schema.json.meta
+│           DungeonStageData.schema.json
+│           DungeonStageData.schema.json.meta
+│           EnemyData.schema.json
+│           EnemyData.schema.json.meta
+│           EnemySpawnData.schema.json
+│           EnemySpawnData.schema.json.meta
+│           FieldObjectData.schema.json
+│           FieldObjectData.schema.json.meta
+│           
+├───Materials
+│       Enemy.mat
+│       Enemy.mat.meta
+│       
+├───Prefabs
+│       Button.prefab
+│       Button.prefab.meta
+│       CharacterUI.prefab
+│       CharacterUI.prefab.meta
+│       Empty.prefab
+│       Empty.prefab.meta
+│       Enemy.prefab
+│       Enemy.prefab.meta
+│       OutSide.prefab
+│       OutSide.prefab.meta
+│       
+├───Scenes
+│       GameScene.unity
+│       GameScene.unity.meta
+│       
+└───Scripts
+    │   Core.meta
+    │   GameManager.cs
+    │   GameManager.cs.meta
+    │   GameSystems.meta
+    │   UI.meta
+    │   
+    ├───Core
+    │   │   Data.meta
+    │   │   Grid.meta
+    │   │   Utility.meta
+    │   │   
+    │   ├───Data
+    │   │       CharacterData.cs
+    │   │       CharacterData.cs.meta
+    │   │       DungeonStageData.cs
+    │   │       DungeonStageData.cs.meta
+    │   │       EnemyData.cs
+    │   │       EnemyData.cs.meta
+    │   │       EnemyShapeData.cs
+    │   │       EnemyShapeData.cs.meta
+    │   │       EnemySpawnData.cs
+    │   │       EnemySpawnData.cs.meta
+    │   │       FieldObjectData.cs
+    │   │       FieldObjectData.cs.meta
+    │   │       
+    │   ├───Grid
+    │   │       BaseGridInformation.cs
+    │   │       BaseGridInformation.cs.meta
+    │   │       FieldGridInformation.cs
+    │   │       FieldGridInformation.cs.meta
+    │   │       GridManager.cs
+    │   │       GridManager.cs.meta
+    │   │       PuzzleGridInformation.cs
+    │   │       PuzzleGridInformation.cs.meta
+    │   │       
+    │   └───Utility
+    │           JsonUtilityExtensions.cs
+    │           JsonUtilityExtensions.cs.meta
+    │           
+    ├───GameSystems
+    │   │   Battle.meta
+    │   │   Character.meta
+    │   │   DataLoad.meta
+    │   │   Enemy.meta
+    │   │   FieldObject.meta
+    │   │   Flow.meta
+    │   │   PuzzleObject.meta
+    │   │   View.meta
+    │   │   
+    │   ├───Battle
+    │   │       BattleCharacter.cs
+    │   │       BattleCharacter.cs.meta
+    │   │       BattleEnemy.cs
+    │   │       BattleEnemy.cs.meta
+    │   │       BattleInitializer.cs
+    │   │       BattleInitializer.cs.meta
+    │   │       BattleManager.cs
+    │   │       BattleManager.cs.meta
+    │   │       BattleTurnController.cs
+    │   │       BattleTurnController.cs.meta
+    │   │       EnemySpawner.cs
+    │   │       EnemySpawner.cs.meta
+    │   │       EnemyTurnController.cs
+    │   │       EnemyTurnController.cs.meta
+    │   │       FieldGenerator.cs
+    │   │       FieldGenerator.cs.meta
+    │   │       PlayerTurnController.cs
+    │   │       PlayerTurnController.cs.meta
+    │   │       PuzzleGenerator.cs
+    │   │       PuzzleGenerator.cs.meta
+    │   │       
+    │   ├───Character
+    │   │       Character.cs
+    │   │       Character.cs.meta
+    │   │       
+    │   ├───DataLoad
+    │   │       BattleCharacterFactory.cs
+    │   │       BattleCharacterFactory.cs.meta
+    │   │       BattleEnemyFactory.cs
+    │   │       BattleEnemyFactory.cs.meta
+    │   │       CharacterDatabase.cs
+    │   │       CharacterDatabase.cs.meta
+    │   │       DungeonDataLoader.cs
+    │   │       DungeonDataLoader.cs.meta
+    │   │       EnemyDatabase.cs
+    │   │       EnemyDatabase.cs.meta
+    │   │       EnemyShapeLoader.cs
+    │   │       EnemyShapeLoader.cs.meta
+    │   │       FieldObjectFactory.cs
+    │   │       FieldObjectFactory.cs.meta
+    │   │       PuzzleObjectFactory.cs
+    │   │       PuzzleObjectFactory.cs.meta
+    │   │       
+    │   ├───Enemy
+    │   │       Enemy.cs
+    │   │       Enemy.cs.meta
+    │   │       
+    │   ├───FieldObject
+    │   │       BattleEnemyCube.cs
+    │   │       BattleEnemyCube.cs.meta
+    │   │       EmptyFieldObject.cs
+    │   │       EmptyFieldObject.cs.meta
+    │   │       FieldObject.cs
+    │   │       FieldObject.cs.meta
+    │   │       OutSideFieldObject.cs
+    │   │       OutSideFieldObject.cs.meta
+    │   │       
+    │   ├───Flow
+    │   │       DungeonSceneManager.cs
+    │   │       DungeonSceneManager.cs.meta
+    │   │       
+    │   ├───PuzzleObject
+    │   │       CharactorPieceCube.cs
+    │   │       CharactorPieceCube.cs.meta
+    │   │       EmptyPuzzleObject.cs
+    │   │       EmptyPuzzleObject.cs.meta
+    │   │       OutSidePuzzleObject.cs
+    │   │       OutSidePuzzleObject.cs.meta
+    │   │       PuzzleObject.cs
+    │   │       PuzzleObject.cs.meta
+    │   │       
+    │   └───View
+    │           FieldViewFactory.cs
+    │           FieldViewFactory.cs.meta
+    │           PuzzleViewFactory.cs
+    │           PuzzleViewFactory.cs.meta
+    │           
+    └───UI
+        │   BattaleUI.meta
+        │   Common.meta
+        │   MainMenu.meta
+        │   
+        ├───BattaleUI
+        ├───Common
+        └───MainMenu
                 DungeonButtonUI.cs
+                DungeonButtonUI.cs.meta
                 DungeonSelectUIManager.cs
+                DungeonSelectUIManager.cs.meta
                 
