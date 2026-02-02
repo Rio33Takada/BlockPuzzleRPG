@@ -41,9 +41,9 @@ public class BattleController
             { BattleState.PlayerInput, new PlayerInputState(context, this) },
             { BattleState.PuzzleResolving, new PuzzleResolvingState(context, this) },
             { BattleState.EnemyTurn, new EnemyTurnState(context, this) },
-            { BattleState.TurnEnd, new TurnEndState(context, this) },
-            { BattleState.Victory, new VictoryState(context) },
-            { BattleState.Defeat, new DefeatState(context) }
+            //{ BattleState.TurnEnd, new TurnEndState(context, this) },
+            //{ BattleState.Victory, new VictoryState(context) },
+            //{ BattleState.Defeat, new DefeatState(context) }
         };
 
         return new BattleStateMachine(states);

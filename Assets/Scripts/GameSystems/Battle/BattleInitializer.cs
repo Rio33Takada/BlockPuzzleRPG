@@ -18,7 +18,12 @@ public class BattleInitializer
         this.characterPath = characterPath;
     }
 
-    public (GridManager<FieldGridInformation>, List<BattleEnemy>) InitializeBattle(
+    public (
+        GridManager<FieldGridInformation>, 
+        GridManager<PuzzleGridInformation>, 
+        List<BattleEnemy>
+        ) 
+        InitializeBattle(
         string stageId,
         FieldViewFactory fieldViewFactory,
         PuzzleViewFactory puzzleViewFactory,
@@ -56,6 +61,6 @@ public class BattleInitializer
         // î’ñ ê∂ê¨.
         GridManager<PuzzleGridInformation> puzzle = puzzleGenerator.GeneratePuzzle(stageData);
 
-        return (field, enemies);
+        return (field, puzzle, enemies);
     }
 }

@@ -13,10 +13,25 @@ public class StartTurnState : IBattleState
 
     public void Enter()
     {
-        Debug.Log("Start Turn");
+        Debug.Log("[Battle] Start Turn");
+
+        // 将来ここに入る可能性があるもの：
+        // - ターン数インクリメント
+        // - バフ / デバフ更新
+        // - 行動回数リセット
+        // ただし今は何もしない
+
+        // 即 PlayerInput へ
         controller.ChangeState(BattleState.PlayerInput);
     }
 
-    public void Update() { }
-    public void Exit() { }
+    public void Update()
+    {
+        // 待たない
+    }
+
+    public void Exit()
+    {
+        // 何もしない
+    }
 }

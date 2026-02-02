@@ -1,4 +1,4 @@
-interface IBattleState
+public interface IBattleState
 {
     void Enter();
     void Update();

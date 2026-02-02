@@ -23,8 +23,8 @@ public class DungeonSceneManager : MonoBehaviour
 
     public void StartDungeon(string dungeonId)
     {
-        var (field, enemies) = battleInitializer.InitializeBattle(dungeonId, fieldViewFactory, puzzleViewFactory, fieldParent, puzzleParent);
-        BattleManager battleManager = new BattleManager(field, null, enemies);
+        var (field, puzzle, enemies) = battleInitializer.InitializeBattle(dungeonId, fieldViewFactory, puzzleViewFactory, fieldParent, puzzleParent);
+        BattleController battleManager = new BattleController(field, puzzle, null, enemies, );
         battleManager.StartBattle();
     }
 }

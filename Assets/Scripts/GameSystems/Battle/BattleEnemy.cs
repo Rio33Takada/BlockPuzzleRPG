@@ -7,6 +7,10 @@ public class BattleEnemy
     public List<BattleEnemyCube> Cubes { get; }
     public EnemyShapeData ShapeData { get; private set; }
 
+    public int HP { get; private set; }
+
+    public bool IsAlive => HP > 0;
+
     public BattleEnemy(Enemy data, List<BattleEnemyCube> cubes)
     {
         EnemyData = data;
